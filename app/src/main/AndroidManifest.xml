@@ -1,34 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="com.questly.android"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.questly.android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:name=".QuestlyApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+            android:name=".QuestlyApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
         <activity android:name=".ui.WelcomeActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".ui.SignUpActivity" />
-        <activity android:name=".ui.OnboardingActivity" />
-        <activity android:name=".ui.SettingsActivity" />
         <activity
-            android:name=".ui.MainActivity"
-            android:label="@string/title_activity_map_acticity"
-            android:theme="@style/AppTheme" />
+                android:name=".ui.LoginActivity"
+                android:windowSoftInputMode="adjustResize"/>
+        <activity
+                android:name=".ui.SignUpActivity"
+                android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".ui.OnboardingActivity"/>
+        <activity android:name=".ui.SettingsActivity"/>
+        <activity android:name=".ui.TaskListActivity"/>
+        <activity
+                android:name=".ui.MainActivity"
+                android:label="@string/title_activity_main"/>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="@string/google_maps_key"/>
+
+        <activity
+                android:name=".ui.MapsActivity"
+                android:label="@string/title_activity_maps">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.questly.android.ui.MainActivity"/>
+        </activity>
+        <activity
+                android:name=".ui.ProfileActivity"
+                android:label="@string/title_activity_profile"
+                android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>

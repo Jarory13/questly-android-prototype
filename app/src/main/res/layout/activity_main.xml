@@ -1,17 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.questly.android.ui.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+    <include layout="@layout/content_main_activity"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end">
+
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/fab_margin"
+                app:backgroundTint="@color/blue"
+                android:src="@drawable/ic_add_white_36dp"/>
+
+        <LinearLayout
+                android:id="@+id/button_container"
+                android:layout_width="match_parent"
+                android:layout_below="@id/fab"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal">
+
+            <com.questly.android.commons.TypeFacedButton
+                    android:id="@+id/chat_button"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:text="Chat"
+                    android:textSize="24sp"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/chat"
+                    android:background="@color/white"
+                    android:textColor="@color/gray"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            <com.questly.android.commons.TypeFacedButton
+                    android:id="@+id/map_button"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:gravity="center"
+                    android:text="Map"
+                    android:layout_width="0dp"
+                    android:textSize="24sp"
+                    android:padding="4dp"
+                    android:drawableTop="@drawable/map_marker"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:textColor="@color/gray"
+                    android:layout_weight="1"/>
+
+            <com.questly.android.commons.TypeFacedButton
+                    android:id="@+id/task_button"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:padding="4dp"
+                    android:text="Quests"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@drawable/table"
+                    android:background="@color/white"
+                    android:textColor="@color/gray"
+                    android:gravity="center"
+                    android:textSize="24sp"
+                    android:layout_weight="1"/>
+
+            <com.questly.android.commons.TypeFacedButton
+                    android:id="@+id/profile_button"
+                    android:padding="4dp"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:text="Profile"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:background="@color/white"
+                    android:drawableTop="@drawable/user_male_circle_filled"
+                    android:textColor="@color/gray"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

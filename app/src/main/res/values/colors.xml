@@ -4,9 +4,23 @@
     <color name="colorPrimaryDark">#363636</color>
     <color name="colorAccent">#FF4081</color>
     <color name="questly_green">#8fc9bc</color>
+    <color name="light_questly_green">#b0e9db</color>
+    <color name="lighter_questly_green">#e5faf5</color>
     <color name="white">#ffffff</color>d
     <color name="gray">#525252</color>
-    <color name="light_gray">#9f9898</color>
+    <color name="light_gray">#918a8a</color>
     <color name="light_green">#d3ede7</color>
     <color name="white_transparent">#aaffffff</color>
+    <color name="black_transparent">#73000000</color>
+    <color name="transparent">#88000000</color>
+    <color name="blue">#b1cbe7</color>
+    <color name="health_green">#1b9924</color>
+    <color name="red">#dc4a4a</color>
+    <color name="defense_gray">#636363</color>
+    <color name="magic_blue">#319def</color>
+    <color name="pink">#dd7d8a</color>
+    <color name="light_pink">#f5c1c8</color>
+    <color name="lighter_pink">#fae4e7</color>
+    <color name="black">#000000</color>
+    <color name="lighter_gray">#cccccc</color>
 </resources>

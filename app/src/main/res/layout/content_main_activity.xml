@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.questly.android.ui.MainActivity"
+            tools:showIn="@layout/activity_main">
+    </FrameLayout>
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:title="Mark Z."
+            app:titleTextColor="@color/white"
+            android:background="@color/pink"
+            app:popupTheme="@style/PopupOverlay"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@color/white"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_width="180dp"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="-16dp"
+                    android:layout_toRightOf="@+id/profile_avatar"
+                    android:layout_centerVertical="true"
+                    android:layout_height="30dp">
+                <View
+                        android:id="@+id/earned_experience"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@color/light_pink"/>
+                <View
+                        android:id="@+id/left_experience"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/lighter_pink"/>
+            </LinearLayout>
+            <ImageView
+                    android:id="@+id/profile_avatar"
+                    android:layout_width="48dp"
+                    android:src="@drawable/user_male_circle_filled"
+                    android:layout_height="48dp"/>
+
+            <com.questly.android.commons.TypeFacedButton
+                    android:layout_width="80dp"
+                    android:textColor="@color/magic_blue"
+                    android:text="Filter"
+                    android:textSize="26sp"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:background="@drawable/green_white_rounded_rect"
+                    android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="20dp">
+            <View
+                    android:id="@+id/earned_x"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@color/light_questly_green"/>
+            <View
+                    android:id="@+id/left_x"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/lighter_questly_green"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

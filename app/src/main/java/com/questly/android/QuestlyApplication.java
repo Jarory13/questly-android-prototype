@@ -1,5 +1,6 @@
 package com.questly.android;
 
+import com.firebase.client.Firebase;
 import com.parse.Parse;
 import com.parse.ParseUser;
 
@@ -11,5 +12,6 @@ public class QuestlyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Parse.initialize(this, Config.PARSE_APPLICATION_ID, Config.PARSE_CLIENT_ID);
+        Firebase.setAndroidContext(this);
     }
 }

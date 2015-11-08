@@ -14,7 +14,7 @@
     <EditText
         android:id="@+id/quest_type_edittext"
         style="@style/CreateTaskEditTextStyle"
-        android:hint="@string/quest_name"
+        android:hint="@string/quest_type"
         android:layout_marginTop="12dp"
         android:layout_width="match_parent" />
 
@@ -41,7 +41,7 @@
 
     <com.questly.android.commons.TypeFacedButton
         android:id="@+id/quest_create_button"
-        android:layout_width="match_parent"
+        android:layout_width="280dp"
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:background="@drawable/green_rect_rounded_background"

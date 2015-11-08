@@ -1,14 +1,19 @@
 package com.questly.android.ui;
 
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.parse.ParseUser;
+import com.questly.android.Config;
 import com.questly.android.R;
+import com.questly.android.util.AppHelper;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.content.Context;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +39,10 @@ public class CreateTaskDialogFragment extends DialogFragment {
 
     private EditText mQuestReward;
 
+    private ProgressDialog mProgressDialog;
+
+    private AlertDialog mMessageDialog;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,7 +59,7 @@ public class CreateTaskDialogFragment extends DialogFragment {
             @Override
             public void onClick(View v) {
                 if (validateForm()) {
-
+                    executeCreateQuest();
                 }
             }
         });
@@ -69,8 +78,57 @@ public class CreateTaskDialogFragment extends DialogFragment {
         map.put("reward", mQuestReward.getText().toString());
         map.put("sender", ParseUser.getCurrentUser().getUsername());
         map.put("timer", mQuestDescription.getText().toString());
-//        map.put("userLat", mQuestDescription.getText().toString());
-//        map.put("userLon", mQuestDescription.getText().toString());
+        map.put("userLat", String.valueOf(AppHelper.getInstance().getLat()));
+        map.put("userLon", String.valueOf(AppHelper.getInstance().getLong()));
+
+        showProgressDialog();
+        Firebase app = new Firebase(Config.QUESTLY_FIREBASE_URL);
+        app.child("quests").setValue(map, new Firebase.CompletionListener() {
+            @Override
+            public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+                hideProgressDialog();
+                if (firebaseError != null) {
+                    showFailedSignUpDialog("An error occur! Please try again later.");
+                } else {
+                    dismiss();
+                }
+            }
+        });
+    }
+
+    private void showFailedSignUpDialog(String errorMessage) {
+        if (mMessageDialog == null) {
+            mMessageDialog = new AlertDialog.Builder(getActivity())
+                    .setMessage(R.string.signingup_failed_message + "\n" + errorMessage)
+                    .setNegativeButton(android.R.string.cancel,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }).create();
+        }
+        mMessageDialog.show();
+    }
+
+
+    //TODO: Consolidate progress dialog logic. Could be a util class
+    private void showProgressDialog() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new ProgressDialog(getActivity());
+            mProgressDialog.setMessage("Posting");
+            mProgressDialog.setIndeterminate(true);
+            mProgressDialog.setCanceledOnTouchOutside(false);
+            mProgressDialog.setCancelable(false);
+        }
+        mProgressDialog.show();
+    }
+
+
+    private void hideProgressDialog() {
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.dismiss();
+        }
     }
 
     @Override

@@ -141,9 +141,10 @@ public class SignUpActivity extends BaseActivity {
                         public void done(ParseException e) {
                             hideProgressDialog();
                             if (e != null) {
-                               showFailedSignUpDialog();
+                                showFailedSignUpDialog(e.getMessage());
                             } else {
                                 getActivity().startActivity(new Intent(getActivity(), OnboardingActivity.class));
+                                getActivity().finish();
                             }
 
                         }
@@ -163,10 +164,10 @@ public class SignUpActivity extends BaseActivity {
             mProgressDialog.show();
         }
 
-        private void showFailedSignUpDialog() {
+        private void showFailedSignUpDialog(String errorMessage) {
             if (mSuccessDialog == null) {
                 mSuccessDialog = new AlertDialog.Builder(getActivity())
-                        .setMessage(R.string.signingup_failed_message)
+                        .setMessage(R.string.signingup_failed_message + "\n" + errorMessage)
                         .setNegativeButton(android.R.string.cancel,
                                 new DialogInterface.OnClickListener() {
                                     @Override
