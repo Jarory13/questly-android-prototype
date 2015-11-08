@@ -58,6 +58,16 @@
                         android:layout_weight="1"
                         android:background="@color/lighter_pink"/>
             </LinearLayout>
+
+            <com.questly.android.commons.TypeFacedTextView
+                    android:layout_width="164dp"
+                    android:layout_height="wrap_content"
+                    android:text="90/180"
+                    android:textSize="32sp"
+                    android:textColor="@color/light_gray"
+                    android:gravity="center"
+                    android:layout_toRightOf="@+id/profile_avatar"
+                    android:layout_centerVertical="true"/>
             <ImageView
                     android:id="@+id/profile_avatar"
                     android:layout_width="48dp"

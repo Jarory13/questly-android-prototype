@@ -118,9 +118,11 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
         //Init
         SupportMapFragment mapFragment = SupportMapFragment.newInstance();
         mapFragment.getMapAsync(MainActivity.this);
+        mMap = mapFragment.getMap();
         getSupportFragmentManager().beginTransaction()
                 .add(getContainerId(), mapFragment, mapFragment.getClass().getSimpleName())
                 .commit();
+
         getSupportActionBar().setTitle("Map");
         getGoogleApiClient();
     }

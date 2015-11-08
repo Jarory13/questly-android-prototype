@@ -32,20 +32,6 @@
                 android:orientation="horizontal">
 
             <com.questly.android.commons.TypeFacedButton
-                    android:id="@+id/chat_button"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
-                    android:text="Chat"
-                    android:textSize="24sp"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:drawableTop="@drawable/chat"
-                    android:background="@color/white"
-                    android:textColor="@color/gray"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
-            <com.questly.android.commons.TypeFacedButton
                     android:id="@+id/map_button"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:gravity="center"

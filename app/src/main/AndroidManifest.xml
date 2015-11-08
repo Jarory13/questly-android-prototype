@@ -31,6 +31,7 @@
         <activity android:name=".ui.TaskListActivity"/>
         <activity
                 android:name=".ui.MainActivity"
+                android:launchMode="singleTop"
                 android:label="@string/title_activity_main"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

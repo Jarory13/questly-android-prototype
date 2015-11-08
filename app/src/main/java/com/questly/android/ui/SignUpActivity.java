@@ -143,7 +143,9 @@ public class SignUpActivity extends BaseActivity {
                             if (e != null) {
                                 showFailedSignUpDialog(e.getMessage());
                             } else {
-                                getActivity().startActivity(new Intent(getActivity(), OnboardingActivity.class));
+                                Intent i = new Intent(getActivity(), OnboardingActivity.class);
+                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                getActivity().startActivity(i);
                                 getActivity().finish();
                             }
 

@@ -76,14 +76,14 @@ public class CreateTaskDialogFragment extends DialogFragment {
         map.put("questName", mQuestName.getText().toString());
         map.put("questType", mQuestType.getText().toString());
         map.put("reward", mQuestReward.getText().toString());
-        map.put("sender", ParseUser.getCurrentUser().getUsername());
+        map.put("sender", "qwerty123");
         map.put("timer", mQuestDescription.getText().toString());
         map.put("userLat", String.valueOf(AppHelper.getInstance().getLat()));
         map.put("userLon", String.valueOf(AppHelper.getInstance().getLong()));
 
         showProgressDialog();
-        Firebase app = new Firebase(Config.QUESTLY_FIREBASE_URL);
-        app.child("quests").setValue(map, new Firebase.CompletionListener() {
+        Firebase app = new Firebase(Config.QUESTLY_FIREBASE_URL + "/quests");
+        app.push().setValue(map, new Firebase.CompletionListener() {
             @Override
             public void onComplete(FirebaseError firebaseError, Firebase firebase) {
                 hideProgressDialog();

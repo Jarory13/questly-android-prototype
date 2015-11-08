@@ -1,5 +1,10 @@
 package com.questly.android.ui;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+import com.questly.android.Config;
 import com.questly.android.R;
 import com.questly.android.commons.BaseActivity;
 
@@ -14,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class TaskListActivity extends BaseActivity {
 
@@ -47,6 +53,22 @@ public class TaskListActivity extends BaseActivity {
             TaskAdapter adapter = new TaskAdapter();
             listView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
+
+            Firebase task = new Firebase(Config.QUESTLY_FIREBASE_URL + "/quests");
+            task.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Toast.makeText(getActivity(), dataSnapshot.toString(), Toast.LENGTH_SHORT)
+                            .show();
+
+                }
+
+                @Override
+                public void onCancelled(FirebaseError firebaseError) {
+
+                }
+            });
+
             return view;
         }
 
