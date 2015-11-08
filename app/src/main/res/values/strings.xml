@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Questly</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login_invalid_email_password">Invalid Email/Password.\nPlease try again</string>
+    <string name="username">Username</string>
+    <string name="signup">Sign-Up</string>
+    <string name="dob">Date of Birth MM/DD/YY</string>
+    <string name="dob_format">%1$s/%2$s/%3$s</string>
+    <string name="invalid_error_msg_username">Invalid username.</string>
+    <string name="invalid_error_create_quest_empty">Can\'t be left empty.</string>
+    <string name="invalid_error_msg_email">Invalid email. Please try again.</string>
+    <string name="invalid_error_msg_dob">You must be 18 years above.</string>
+    <string name="invalid_error_msg_password">Invalid password.\nPlease try again.</string>
+    <string name="signingup_progress_text">Signing up...</string>
+    <string name="signingup_failed_message">oops. Something happened! Please try siging up again in a few hours.</string>
+    <string name="title_activity_map_acticity">MapActicity</string>
+    <string name="quest_name">Quest Name</string>
+    <string name="quest_description">Description</string>
+    <string name="quest_timer">Timer</string>
+    <string name="quest_reward">Reward</string>
+    <string name="quest_create_quest">Create Quest</string>
+    <string name="create_quest">Create Quest</string>
+</resources>

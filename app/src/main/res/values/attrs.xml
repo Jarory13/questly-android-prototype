@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TypeFacedTextView">
+        <attr name="fontName">
+            <enum name="BLANCH_CAPS" value="0" />
+            <enum name="BLANCH_CAPS_INLINE" value="1" />
+            <enum name="BLANCH_CAPS_LIGHT" value="2" />
+            <enum name="BLANCH_CONDENSED" value="3" />
+            <enum name="BLANCH_CONDENSED_INLINE" value="4" />
+            <enum name="BLANCH_CONDENSED_LIGHT" value="5" />
+        </attr>
+    </declare-styleable>
+</resources>
+

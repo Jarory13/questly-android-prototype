@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/welcome_background" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/widget_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/input_username"
+            style="@style/LoginSignupEditTextStyle"
+            android:layout_width="match_parent"
+            android:hint="@string/username"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/input_email"
+            style="@style/LoginSignupEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/input_password"
+            style="@style/LoginSignupEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/input_dob"
+            style="@style/LoginSignupEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="@string/dob"
+            android:inputType="date" />
+    </LinearLayout>
+
+    <com.questly.android.commons.TypeFacedTextView
+        android:id="@+id/signup_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="48dp"
+        android:text="@string/signup"
+        android:textColor="@color/white"
+        android:textSize="66sp" />
+</RelativeLayout>
