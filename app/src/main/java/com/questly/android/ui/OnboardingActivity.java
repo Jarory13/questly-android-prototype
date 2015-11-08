@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * Onboarding experience a user see after {@link SignUpActivity}
+ */
 public class OnboardingActivity extends BaseActivity {
 
     @Override

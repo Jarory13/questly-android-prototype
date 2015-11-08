@@ -61,7 +61,6 @@ public class LoginActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     if (validateEmail() && validatePassword()) {
-
                         //TODO: Actual Login
                         getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
                     } else {

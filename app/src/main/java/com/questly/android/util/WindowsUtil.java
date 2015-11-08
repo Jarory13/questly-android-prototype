@@ -5,7 +5,11 @@ import android.content.Context;
 public class WindowsUtil {
 
     /**
-     * For transparent status bar with transparent actionbar
+     * For {@link com.questly.android.ui.WelcomeActivity}, {@link com.questly.android.ui.LoginActivity}
+     * and {@link com.questly.android.ui.SignUpActivity}, translucent status bar is enabled so to have
+     * {@link android.support.v7.widget.Toolbar} aligned underneath status bar, I need to calculate height
+     * to set the toolbar padding.
+     * Hackery.
      * @param context
      * @return
      */

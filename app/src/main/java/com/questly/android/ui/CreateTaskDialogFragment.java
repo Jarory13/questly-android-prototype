@@ -59,6 +59,7 @@ public class CreateTaskDialogFragment extends DialogFragment {
         return view;
     }
 
+    //TODO: Post Quest
     private void executeCreateQuest() {
         Map<String, String> map = new HashMap<>();
         map.put("Date", Calendar.getInstance().getTime().toString());
@@ -68,8 +69,8 @@ public class CreateTaskDialogFragment extends DialogFragment {
         map.put("reward", mQuestReward.getText().toString());
         map.put("sender", ParseUser.getCurrentUser().getUsername());
         map.put("timer", mQuestDescription.getText().toString());
-        map.put("userLat", mQuestDescription.getText().toString());
-        map.put("userLon", mQuestDescription.getText().toString());
+//        map.put("userLat", mQuestDescription.getText().toString());
+//        map.put("userLon", mQuestDescription.getText().toString());
     }
 
     @Override

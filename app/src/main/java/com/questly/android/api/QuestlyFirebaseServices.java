@@ -11,7 +11,5 @@ public interface QuestlyFirebaseServices {
 
     @FormUrlEncoded
     @POST("/post")
-    void createQuest(
-            @FieldMap Map<String, String> map,
-            Callback<Void> callback);
+    void createQuest(@FieldMap Map<String, String> map, Callback<Void> callback);
 }

@@ -13,6 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+/**
+ * Probably the single point of entry in this application.
+ * This will direct user to {@link MainActivity} if {@link ParseUser} is not null.
+ */
 public class WelcomeActivity extends BaseActivity {
 
     @Override

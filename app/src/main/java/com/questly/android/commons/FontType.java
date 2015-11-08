@@ -1,5 +1,8 @@
 package com.questly.android.commons;
 
+/**
+ * Stores all font file names. Enums type can renamed but the values should not be editted.
+ */
 public enum FontType {
 
     BLANCH_CAPS("BLANCH_CAPS.otf"),

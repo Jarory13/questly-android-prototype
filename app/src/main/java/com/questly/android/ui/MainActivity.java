@@ -8,6 +8,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+/**
+ * Main screen a user see if they are already logged in.s
+ */
 public class MainActivity extends BaseActivity {
 
     private CreateTaskDialogFragment createTaskDialogFragment;
