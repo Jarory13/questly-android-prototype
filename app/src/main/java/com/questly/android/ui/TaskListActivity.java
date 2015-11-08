@@ -60,7 +60,6 @@ public class TaskListActivity extends BaseActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Toast.makeText(getActivity(), dataSnapshot.toString(), Toast.LENGTH_SHORT)
                             .show();
-
                 }
 
                 @Override
